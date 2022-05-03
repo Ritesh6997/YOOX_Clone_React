@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div>
-    <h1 className='center'>YOOX</h1> 
+      <h1 className="center">YOOX</h1>
     </div>
   );
 }
