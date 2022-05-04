@@ -1,20 +1,26 @@
 import React from 'react'
-import { Box, Button, flexbox, Radio } from '@chakra-ui/react';
+import {useState} from "react"
+import { Box } from '@chakra-ui/react';
 import { ImCross } from "react-icons/im"
 import { BsHeart } from "react-icons/bs";
-
+import "./cart.css";
 import {
   AiFillPlusCircle,
   AiFillMinusCircle,
-  AiOutlineHeart,
 } from "react-icons/ai";
-export default function Counter() {
+export default function Counter({ value1 }) {
+  console.log(value1)
   const isAuth = true;
-  const handlechange=(value)=>{
-    console.log(1);
+  const [countervalue, setCounterValue] = useState(0);
+  console.log(countervalue)
+  const handlechange = (value) => {
+    if (countervalue <= 0 && value === -1) {
+      return;
+    }
+    setCounterValue((previous) => previous + value);
   }
   return (
-    <div>
+    <div className='counterdiv'>
       <Box
         w={"80px"}
         h={"23px"}
@@ -25,14 +31,9 @@ export default function Counter() {
       >
         {isAuth ? (
           <button
-            style={{
-              width: "20px",
-              height: "23px",
-              color: "black",
-              borderRadius: "50%",
-              paddingBottom: "10px",
-              backgroundColor: "white",
-              fontSize: "23px",
+            className="cartbtn"
+            onClick={() => {
+              handlechange(-1);
             }}
           >
             {AiFillMinusCircle()}
@@ -40,17 +41,12 @@ export default function Counter() {
         ) : (
           ""
         )}
-        <span></span>
+        <span>{countervalue}</span>
         {isAuth ? (
           <button
-            style={{
-              width: "20px",
-              height: "23px",
-              color: "black",
-              borderRadius: "50%",
-              paddingBottom: "10px",
-              backgroundColor: "white",
-              fontSize: "23px",
+            className="cartbtn"
+            onClick={() => {
+              handlechange(1);
             }}
           >
             {AiFillPlusCircle()}
@@ -69,7 +65,6 @@ export default function Counter() {
       >
         {ImCross()}REMOVE
       </button>
-      <br />
       <button
         style={{
           display: "flex",
