@@ -45,7 +45,7 @@ export default function Nav2() {
             <Link style={{ fontSize: "20px" }} to="/kids">
               {BsSuitHeart()} <span className="quantitydiv">10</span>
             </Link>
-            <Link style={{ fontSize: "20px" }} to="/women">
+            <Link style={{ fontSize: "20px" }} to="/cart">
               {BsFillBagFill()} <span className="quantitydiv">10</span>
             </Link>
           </div>
