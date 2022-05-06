@@ -1,6 +1,4 @@
-{
-  /* import section*/
-}
+import React from "react";
 import styled from "styled-components";
 import womenBanner from "../../assets/ProductPageImage/women_banner.webp";
 import women_designer_banner_left from "../../assets/ProductPageImage/women_designer_banner_left.jpeg";
@@ -45,9 +43,9 @@ import { getProduct } from "../../redux/product/action";
 import {ProductCard} from './ProductCard'
 
 
-{
+
   /* Products section*/
-}
+
 export const StyleM = styled.div`
   .slick-arrow {
     background-color: rgb(51, 51, 51);
@@ -59,7 +57,6 @@ export const StyleM = styled.div`
   }
   .slick-prev:before,
   .slick-next:before {
-    /* content:${()=> {return (<ArrowBackIcon/>)}}; */
     font-family: "slick";
     font-size: 25px;
     margin: auto;
@@ -95,7 +92,11 @@ export const Products = () => {
     slidesToScroll: 1,
   };
   const { name } = useParams()
+  console.log(name);
   const [page, setPage] = useState(name)
+  useEffect(() => {
+    setPage(name);
+  }, [name]);
   var dispatch = useDispatch();
   const productData = useSelector((store) => { return store.product.productData })
   console.log('productData:', productData)

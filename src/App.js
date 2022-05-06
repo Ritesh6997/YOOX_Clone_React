@@ -1,15 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+// import {Store} from "./components/Redux/store" 
 import { Products } from "./components/Products/Products";
 import { ProductViewAll } from "./components/Products/ProductViewAll";
 import { Routes, Route } from "react-router-dom";
-
+import ProtectedRoutes from "./components/Navbar/ProtectedRoutes";
+import Cart from "./components/Cart.jsx/Cart";
 function App() {
   return (
-    <div>
-      {/* navBar */}
-
-      {/* Routes-content */}
+      <div> 
+        {/* navBar */}
+        <Navbar></Navbar>
       <Routes>
         {/* landing page -Route*/}
         {/* <Route path="/" element={<LandingPage />}></Route> */}
@@ -24,7 +25,12 @@ function App() {
         {/* ProductDetails -Route*/}
         {/* <Route path="/product/:id" element={<ProductDetails />}></Route> */}
         {/* Cart page -Route*/}
-        {/* <Route path="/cart" element={<Cart />}></Route> */}
+        <Route path="/cart"
+            element={
+              <ProtectedRoutes>
+                <Cart />
+              </ProtectedRoutes>
+            }></Route>
         {/* checkout page -Route*/}
         {/* <Route path="/checkOut" element={<CheckOut />}></Route> */}
       </Routes>
