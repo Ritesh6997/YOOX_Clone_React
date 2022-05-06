@@ -9,7 +9,7 @@ export default function Nav2() {
     <div>
       <div>
         <Box
-          w="88%"
+          w="100%"
           m="auto"
           h="50px"
           borderBottom={"1px solid #c7c1c1"}
@@ -21,7 +21,7 @@ export default function Nav2() {
           display="flex"
           alignItems="center"
           justifyContent="space-between"
-          padding="0 15%"
+          padding="0 21%"
         >
           <div style={{ display: "flex", columnGap: "12px" }}>
             <Link to="/women">WOMEN</Link>
