@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getProduct, sortProduct } from "../../redux/product/action";
+import { addWishList, getProduct, sortProduct } from "../../redux/product/action";
 import "./ProductViewAll.css";
 
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
