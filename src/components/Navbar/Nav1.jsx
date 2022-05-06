@@ -17,9 +17,10 @@ export default function Nav1() {
     <div>
       <div>
         <Box
-          w="58%"
+          w="100%"
           h="30px"
           m="auto"
+          padding={"0 21%"}
           bgGradient="linear(to-t, green.200, pink.500)"
           bg="white"
           fontSize={10.5}

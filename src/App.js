@@ -8,6 +8,7 @@ import ProtectedRoutes from "./components/Navbar/ProtectedRoutes";
 import DesignComponent from "./components/DesignComponent";
 import ProductsDetails from "./components/productsDetails/ProductsDetails";
 import Cart from "./components/Cart.jsx/Cart";
+import Footer from "./components/footer/footer";
 function App() {
   return (
     <div>
@@ -39,6 +40,7 @@ function App() {
         {/* <Route path="/checkOut" element={<CheckOut />}></Route> */}
       </Routes>
       {/* footer */}
+      <Footer></Footer>
     </div>
   );
 }
