@@ -1,12 +1,12 @@
-import CartData from "./action"
-const initalState=[]
+import {CartData} from "./action"
+const initalState = { Cartdata:[]}
 export const cartReducer = (state=initalState,{type,payload}) => {
     switch (type) {
         case CartData:
             return {
                 
-                ...state, CartData
-                    : [...state.CartData,...payload]
+                ...state, Cartdata
+                    : [...state.Cartdata,...payload]
              
             };
         default:

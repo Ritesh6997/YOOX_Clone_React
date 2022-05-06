@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import { Button,Box} from '@chakra-ui/react';
 import Cart1 from './cart1';
-import {Store} from "../Redux/store"
+import {store} from "../../redux/store"
 export default function Cart() {
 
   useEffect(() => {
-    getData();
+    // getData();
     
   }, [])
   async function getData() {

@@ -1,13 +1,13 @@
 export const CartData = "CartData";
-export const CartDataAction = (Cartdata) => {
+export const CartDataAction = (value) => {
    return {
         type: CartData,
-        payload:Cartdata, 
+        payload:value, 
     }
 }
 
 export const getCartData = () => async () => {
     const res = await fetch("");
-    const CartData = await res.json();
-    // dispatch(CartData);
+    const Cartdata = await res.json();
+    // dispatch(Cartdata);
 }

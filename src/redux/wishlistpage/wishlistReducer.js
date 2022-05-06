@@ -1,6 +1,6 @@
-import WishlistData from "./action"
+import {WishlistData} from "./action"
 const initalState=[]
-export const cartReducer = (state=initalState,{type,payload}) => {
+export const wishlistReducer = (state=initalState,{type,payload}) => {
     switch (type) {
         case WishlistData:
             return {
