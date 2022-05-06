@@ -1,9 +1,19 @@
 import { Link } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button,Box} from '@chakra-ui/react';
 import Cart1 from './cart1';
-
+import {Store} from "../Redux/store"
 export default function Cart() {
+
+  useEffect(() => {
+    getData();
+    
+  }, [])
+  async function getData() {
+    let res = await fetch("");
+    let data = await res.json();
+   }
+
   return (
     <div>
       <h1

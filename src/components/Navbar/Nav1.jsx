@@ -3,8 +3,16 @@ import { Box, } from '@chakra-ui/react';
 import { Link } from "react-router-dom"
 import { LockIcon, } from "@chakra-ui/icons";
 import { BsFillPencilFill, BsPersonFill } from "react-icons/bs";
+import { Store } from '../Redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { isAuthAction } from '../Redux/action';
 export default function Nav1() {
-    const isAuth = false;
+  // const isAuth = false;
+  const isAuth = useSelector(Store => Store.IsAuth);
+  console.log(isAuth,Store);
+  const dispatch = useDispatch();
+  
+  console.log(isAuth);
   return (
     <div>
       <div>
@@ -26,7 +34,10 @@ export default function Nav1() {
             <Link to="/Home">INDIA</Link> <Link to="/">CUSTOMER CARE</Link>
           </div>
 
-          <div style={{ display: "flex", columnGap: "10px" }}>
+          <div
+            onClick={() => dispatch(isAuthAction())}
+            style={{ display: "flex", columnGap: "10px" }}
+          >
             {isAuth ? (
               <Link style={{ display: "flex" }} to="/Home">
                 {BsFillPencilFill()} REGISTER{" "}
@@ -41,7 +52,10 @@ export default function Nav1() {
                 <LockIcon></LockIcon> LOGIN{" "}
               </Link>
             ) : (
-              <Link to="/"><LockIcon/>LOGOUT </Link>
+              <Link to="/">
+                <LockIcon />
+                LOGOUT{" "}
+              </Link>
             )}
           </div>
         </Box>
