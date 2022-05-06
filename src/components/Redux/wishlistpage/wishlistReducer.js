@@ -1,12 +1,12 @@
-import CartData from "./action"
+import WishlistData from "./action"
 const initalState=[]
 export const cartReducer = (state=initalState,{type,payload}) => {
     switch (type) {
-        case CartData:
+        case WishlistData:
             return {
                 
-                ...state, CartData
-                    : [...state.CartData,...payload]
+                ...state, wishlistData
+                    : [...state.wishlistData,...payload]
              
             };
         default:
