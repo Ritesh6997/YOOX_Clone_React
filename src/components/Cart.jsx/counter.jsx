@@ -11,6 +11,7 @@ import {
 export default function Counter({ value1 }) {
   console.log(value1)
   const isAuth = true;
+
   const [countervalue, setCounterValue] = useState(0);
   console.log(countervalue)
   const handlechange = (value) => {
@@ -18,6 +19,23 @@ export default function Counter({ value1 }) {
       return;
     }
     setCounterValue((previous) => previous + value);
+  }
+  const handleDelect = () => {
+    fetch("", {
+      method: "DELETE"
+    }).then()
+
+  }
+
+  const upadatedata = async () => {
+  const rawResponse = await fetch("", {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ count: 1 })
+  }).then(()=>("call the function to update the data on ui"))
   }
   return (
     <div className='counterdiv'>
