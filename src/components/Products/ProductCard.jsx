@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./ProductCard.css";
 export function ProductCard({ e }) {
   const nav=useNavigate()
-  const { name, type, initialPrice, finalPrice, img, id } = e;
+  const { name, type, initialPrice, finalPrice, img, _id } = e;
   function convert(a,b)
   {
     const x = +(a);
@@ -12,7 +12,7 @@ export function ProductCard({ e }) {
   return (
 
     <div onClick={() => {
-      nav(`/product/${id}`)
+      nav(`/product/${_id}`)
    }} >
      
         <img className="product-card-img" src={img[0]} ></img>
@@ -20,7 +20,7 @@ export function ProductCard({ e }) {
         <div className="product-type">{type}</div>
         {initialPrice != "" ? (
           <div className="product-dis" >
-            <div className="product-initial-price">{initialPrice}</div>
+            <div className="product-initial-price">{`$ ${initialPrice}`}</div>
             <div className="product-dis-price">{`$ ${Math.floor( convert(initialPrice,finalPrice))} % OFF`}</div>
           </div>
         ) : <div  className="ety"></div>}
