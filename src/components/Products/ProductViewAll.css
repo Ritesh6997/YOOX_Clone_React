@@ -1,11 +1,14 @@
 .all-product {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 35px;
+  grid-gap: 40px;
   padding:10px;
 }
 .prt-div {
   /* border: 1px solid red; */
+  border-radius: 20px;
+  padding: 2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   text-align: center;
   text-decoration: none;
 }
@@ -77,5 +80,29 @@
     margin-right: 15px;
 }
 .sort-prt{
+border: 0px;
+padding: 10px 0px;
+margin-right: 100px;
+}
+.srt-option{
 
+margin: 20px;
+}
+
+.view{
+  display: flex;
+  color: rgb(206,206,206);
+  padding-bottom: 6px;
+  border-bottom: 1.3px solid rgb(206,206,206);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.view-icon{
+  margin-left: 20px;
+  cursor: pointer;
+
+}
+.love-icon{
+ padding-left: 30px;
+ cursor: pointer;
 }
