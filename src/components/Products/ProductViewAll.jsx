@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getProduct, sortProduct } from "../../redux/product/action";
 import "./ProductViewAll.css";
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 export const ProductViewAll = () => {
   const nav=useNavigate()
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ export const ProductViewAll = () => {
             <img src={img}></img>
             <div className="view">
               < VisibilityOutlinedIcon className="view-icon" onClick={ ()=>{ nav(`/product/${_id}`)}}/>
-              <FavoriteBorderOutlinedIcon className="love-icon" onClick={ ()=>{ addWishList(_id)}}/>
+              < FavoriteBorderOutlinedIcon className="love-icon-1" onClick={ ()=>{ dispatch(addWishList(_id))}}/>
             </div>
             <div className="prt-name">{name}</div>
             <div className="prt-type">{type}</div>
