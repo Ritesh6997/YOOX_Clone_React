@@ -5,9 +5,9 @@ import Footertop from './Footertop'
 
 export default function Footer() {
   return (
-    <div>
+    <div style={{marginTop:"60px"}}>
       <Footertop></Footertop>
-      <hr />
+      <hr style={{backgroundColor:"white",marginTop:"5px",border:"1px solid White"}} />
       <Contactbar></Contactbar>
       <FooterEnd></FooterEnd>
     </div>

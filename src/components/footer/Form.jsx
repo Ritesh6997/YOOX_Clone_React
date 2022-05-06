@@ -1,11 +1,11 @@
 import React from 'react'
 import { MdOutlineEmail } from "react-icons/md";
-import { Input, Radio,RadioGroup,Stack } from "@chakra-ui/react";
+import { Button, Input, Radio,RadioGroup,Stack } from "@chakra-ui/react";
 import "./footer.css"
 export default function Form() {
   return (
     <div>
-      <form className="formF">
+      <div className="formF">
         <div
           style={{
             fontWeight: "bolder",
@@ -45,8 +45,8 @@ export default function Form() {
           newsletters via email. For further information, please consult the
           Privacy Policy.
         </div>
-        <input type="submit" value="Submit" />
-      </form>
+        <button style={{backgroundColor:"black",color:"white",padding:"15px 5px",fontSize:"18px",fontWeight:"bold"}}>Submit</button>
+      </div>
     </div>
   );
 }

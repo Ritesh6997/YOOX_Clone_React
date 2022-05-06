@@ -11,7 +11,7 @@ export default function Nav2() {
         <Box
           w="100%"
           m="auto"
-          h="50px"
+          h="60px"
           borderBottom={"1px solid #c7c1c1"}
           bgGradient="linear(to-t, green.200, pink.500)"
           bg="white"

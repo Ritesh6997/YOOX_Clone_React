@@ -11,7 +11,7 @@ import Cart from "./components/Cart.jsx/Cart";
 import Footer from "./components/footer/footer";
 function App() {
   return (
-    <div>
+    <div style={{backgroundColor: "whitesmoke",}}>
       {/* navBar */}
       <Navbar></Navbar>
       <Routes>
