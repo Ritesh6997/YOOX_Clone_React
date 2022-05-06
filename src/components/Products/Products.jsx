@@ -31,13 +31,20 @@ import kids_showcase_banner_right from "../../assets/ProductPageImage/kids_showc
 
 
 import "./Products.css";
-import { Link, useParams } from "react-router-dom";
+import axios from 'axios'
+import { useDispatch, useSelector } from "react-redux";
+
+import { Link, useParams,useNavigate} from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { KidDesigner } from "./Kid_Designer";
+import { getProduct } from "../../redux/product/action";
+import {ProductCard} from './ProductCard'
+
+
 {
   /* Products section*/
 }
@@ -89,8 +96,25 @@ export const Products = () => {
   };
   const { name } = useParams()
   const [page, setPage] = useState(name)
- 
+  var dispatch = useDispatch();
+  const productData = useSelector((store) => { return store.product.productData })
+  console.log('productData:', productData)
+  var girl = []
+  for (let i = productData.length - 1; i >= 0; i--) { 
+    girl.push(productData[i])
+  }
+  console.log('girl:', girl)
+  var kind = productData.filter((e) => {
+   
+    return e.show=="kind"
+  })
+  console.log('kind:', kind)
+  // console.log('productData:', productData)
 
+  useEffect(() => {
+    dispatch(getProduct(page))
+  }, [])
+  const nav=useNavigate()
   // setPage(name)
   return (
     <div className="products">
@@ -197,24 +221,24 @@ export const Products = () => {
         {/*   NEW ARRIVALS  section*/}
         
         {page=="kids"?<><div className="slider-title-top">NEW ARRIVALS GIRLS</div>
-        <Link to="###" className="slider-title-bottom"> VIEW ALL</Link>
+        <Link to="/viewAll" className="slider-title-bottom"> VIEW ALL</Link>
         <Slider {...settings} className="slider">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((e,i) => {
+          {girl.map((e,i) => {
             return (
               <div key={i}>
 
-                <div className="slider-products" >{e}</div>
+<ProductCard  e={e} ></ProductCard>
               </div>
             );
           })}
           </Slider>
           <div className="slider-title-top">NEW ARRIVALS BOYS</div>
-        <Link to="###" className="slider-title-bottom"> VIEW ALL</Link>
+        <Link to="/viewAll" className="slider-title-bottom"> VIEW ALL</Link>
         <Slider {...settings} className="slider">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((e,i) => {
+          {productData.map((e,i) => {
             return (
               <div key={i}>
-                <div className="slider-products" >{e}</div>
+               <ProductCard  e={e} ></ProductCard>
 
 
               </div>
@@ -222,12 +246,13 @@ export const Products = () => {
           })}
         </Slider>
         </> : <><div className="slider-title-top">NEW ARRIVALS</div>
-        <Link to="###" className="slider-title-bottom"> VIEW ALL</Link>
+        <Link to="/viewAll" className="slider-title-bottom"> VIEW ALL</Link>
         <Slider {...settings} className="slider">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((e,i) => {
+        {productData.map((e,i) => {
             return (
-              <div key={i}>
-                <div className="slider-products" >{e}</div>
+              <div key={i} >
+               <ProductCard e={e} ></ProductCard>
+
               </div>
             );
           })}
@@ -302,12 +327,14 @@ export const Products = () => {
               {/*   ONE OF A KIND  section*/}
         <div className='one-of-kind'>
               <div className="slider-title-top">ONE OF A KIND</div>
-        <Link to="###" className="slider-title-bottom">VIEW ALL</Link>
+        <Link to="/viewAll" className="slider-title-bottom">VIEW ALL</Link>
         <Slider {...settings} className="slider">
-          {[11, 12, 13, 14, 15, 16, 17, 18, 19].map((e,i) => {
+          {kind.map((e,i) => {
             return (
               <div key={i}>
-                <div className="slider-products" >{e}</div>
+                <ProductCard e={e} onClick={() => {
+                  console.log("fdx")
+               }}></ProductCard>
               </div>
             );
           })}
@@ -333,15 +360,7 @@ export const Products = () => {
             </div>
         </div>
         <div className="ad-banner-slider">
-        <Slider {...settings1} className="slider1">
-          {[11, 12, 13, 14, 15, 16, 17, 18, 19].map((e,i) => {
-            return (
-              <div key={i}>
-                <div className="slider-products1" >{e}</div>
-              </div>
-            );
-          })}
-        </Slider>
+        
        </div>
       </div>
 
