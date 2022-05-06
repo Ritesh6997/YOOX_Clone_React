@@ -26,3 +26,19 @@ export const getProduct = (val) => async (dispatch) => {
   });
 }
 
+export const  addWishList = (val) => async () => {
+  axios.post(`https://young-thicket-70794.herokuapp.com/cart`,{productId:val,userID:userid})
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+}
+
