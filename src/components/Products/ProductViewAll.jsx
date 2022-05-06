@@ -46,7 +46,7 @@ export const ProductViewAll = () => {
             <img src={img}></img>
             <div className="view">
               < VisibilityOutlinedIcon className="view-icon" onClick={ ()=>{ nav(`/product/${_id}`)}}/>
-              <FavoriteBorderOutlinedIcon className="love-icon"/>
+              <FavoriteBorderOutlinedIcon className="love-icon" onClick={ ()=>{ addWishList(_id)}}/>
             </div>
             <div className="prt-name">{name}</div>
             <div className="prt-type">{type}</div>
