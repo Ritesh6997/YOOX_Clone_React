@@ -6,9 +6,10 @@ const init = {
   menProduct:[],
   kidsProduct:[],
 };
-export const productReducer = (store = init, { type, playload }) => {
+export const productReducer = (store = init, { type,payload }) => {
+
   switch (type) {
-    case ADD_PRODUCT: return {...store,productData:[...playload]}
+    case ADD_PRODUCT : return {...store,productData:[...payload]}
     default:
       return store;
   }
