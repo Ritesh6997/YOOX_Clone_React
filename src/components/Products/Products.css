@@ -180,7 +180,7 @@
 .footer-banner {
   display: flex;
   position: relative;
-  margin-top: -350px;
+  
 }
 .footer-banner img {
   width: 100%;
@@ -270,7 +270,7 @@
 }
 .ad-banner .footer-post-left {
   left: 135px;
-  bottom: 450px;
+  bottom: 50px;
 }
 .ad-banner-btn {
   display: flex;
@@ -280,20 +280,20 @@
 .ad-banner-slider {
   position: relative;
 }
-.slider1 {
+/* .slider1 {
   position: absolute;
   top: -535px;
   right: -410px;
   width: 25%;
   margin: auto;
-}
-.slider-products1 {
+} */
+/* .slider-products1 {
   width: 90%;
   height: 65vh;
   margin: auto;
   text-align: center;
   background-color: rgb(255, 255, 255);
-}
+} */
 .banner-section {
   position: relative;
 }
