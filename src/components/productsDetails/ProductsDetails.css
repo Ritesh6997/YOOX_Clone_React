@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Montserrat:wght@100;300;400;500;700&family=Roboto:wght@100&display=swap");
+
+.product-details-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.product-details-container div {
+  height: 70%;
+}
+
+.main-image-display img {
+  /* width: 80%; */
+  height: 90%;
+}
+.product-details-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.sub-image-display {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.sub-image-display {
+}
+.sub-image-display div {
+  height: 80px;
+  border: 1px solid rgb(223, 216, 216);
+}
+.sub-image-display img:hover {
+  border: 2px solid rgb(4, 4, 4);
+}
+.sub-image-display img {
+  width: 80px;
+  height: 100%;
+}
+.product-details-right {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  gap: 20px;
+  padding: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.product-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+.product-text h4 {
+  font-size: 16px;
+  line-height: 19px;
+}
+.product-text p {
+  margin-top: -10px;
+}
+
+.show-color div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.show-color div span {
+  border: 1px solid rgb(21, 23, 21);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  /* background-color: black; */
+}
+.show-color p {
+  font-size: 13px;
+}
+.pdt-size {
+  display: flex;
+}
+.product-price {
+}
+.product-price .show-actual-discount {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.show-actual-discount span {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.show-actual-price h3 {
+  margin-bottom: 10px;
+  margin-top: -7px;
+}
+.show-actual-discount img {
+  cursor: pointer;
+  width: 15px;
+}
+.pdt-size {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  padding: 8px;
+}
+.pdt-size div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 15px;
+  padding: 10px;
+}
+.pdt-size div:hover {
+  border: 1px solid rgb(0, 0, 0);
+}
+.addto-bag-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.addto-bag-btn button {
+  padding: 12px 16px;
+  height: 55px;
+  width: 100%;
+  border: none;
+  font-weight: 700;
+}
+.addto-bag-btn button:hover {
+  color: gray;
+}
+.addto-bag-btn :nth-child(1) {
+  background-color: rgb(9, 9, 9);
+  color: white;
+}
