@@ -7,6 +7,7 @@
 }
 .LandingPage_title img{
     width: 15%;
+    margin-left: 42%;
 }
 .LandingPage_title h3{
     margin-top: 0px;
@@ -47,6 +48,7 @@
     margin-top: 0px;
 
 }
+
 @media screen and (min-width: 721px)and(max-width: 1024px){
     
 }
