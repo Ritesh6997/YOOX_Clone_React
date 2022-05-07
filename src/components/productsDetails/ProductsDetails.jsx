@@ -3,26 +3,51 @@ import "./ProductsDetails.css";
 import infoPNG from "../../img/info.png";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 const ProductsDetails = () => {
   const [idImg, setImg] = useState(0);
-  var data = {
-    name: "SALVATORE FERRAGAMO",
-    type: "Laced shoes",
-    initialPrice: "961.00",
-    finalPrice: "393.00",
-    color: ["#85b09a"],
-    colorName: "Sage green",
-    size: ["6.5", "7"],
-    category: ["men", "shoes"],
-    img: [
-      "https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490",
-      "https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490",
-      "https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490",
-      "https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490",
-    ],
+  // var data = {
+  //   name: "SALVATORE FERRAGAMO",
+  //   type: "Laced shoes",
+  //   initialPrice: "961.00",
+  //   finalPrice: "393.00",
+  //   color: ["#85b09a"],
+  //   colorName: "Sage green",
+  //   size: ["6.5", "7"],
+  //   category: ["men", "shoes"],
+  //   img: [
+  //     "https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490",
+  //     "https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490",
+  //     "https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490",
+  //     "https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490",
+  //   ],
+  // };
+
+  // console.log("DDDDDDDDDDDDDDDDDDDDDdd");
+
+
+  function Addtocart() {
+    fetch("", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...proData }),
+    });
+    
   };
 
-  console.log("DDDDDDDDDDDDDDDDDDDDDdd");
+  function Addtowishlist() {
+    fetch("", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...proData }),
+    });
+  };
   const product = useSelector((store) => store.product.productData);
   console.log(product, "product Data");
   const [proData, setData] = useState({});
@@ -105,8 +130,12 @@ console.log(proData);
           }):""}
         </div>
         <div className="addto-bag-btn">
-          <button>ADD TO SHOPPING BAG</button>
-          <button>ADD TO DREAM BOX</button>
+          <button onClick={() => {
+            Addtocart();
+          }} >ADD TO SHOPPING BAG</button>
+          <button onClick={() => {
+            Addtowishlist();
+          }}>ADD TO DREAM BOX</button>
         </div>
       </div>
     </div>
