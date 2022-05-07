@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+}
+.firstSpan{
+    border: 1px dotted black;
+    margin: auto;
+    width: 80%;
+}
+.fb{
+    background-color: blueviolet;
+}
+.gg{
+        border: 2px solid #F2F2F2;
+        height: 50px;
+        width: 350px;
+        background-color: #FFFFFF;
+        font-size: 20px;
+}
+.login{
+    margin-top: 10px;
+    border: 2px solid #F2F2F2;
+    height: 50px;
+    width: 373px;
+    background-color: #333333;
+    font-size: 20px;
+    color: #FFFFFF;
+}
