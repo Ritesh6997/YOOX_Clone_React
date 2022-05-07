@@ -27,7 +27,7 @@ function App() {
         {/* women,men,kids page -Route*/}
         <Route path="/:name" element={<Products />}></Route>
         {/* design page -Route*/}
-        <Route path="/design" element={<DesignComponent />}></Route>
+        <Route path="/designart" element={<DesignComponent />}></Route>
         {/* ProductViewAll -Route*/}
         <Route path="/viewAll" element={<ProductViewAll />}></Route>
         {/* ProductDetails -Route*/}
