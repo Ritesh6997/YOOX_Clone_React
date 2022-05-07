@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import { Button,Box} from '@chakra-ui/react';
 import Cart1 from './cart1';
+import Cartfooter from './cartfooter'; 
 import {store} from "../../redux/store"
 export default function Cart() {
 
@@ -69,12 +70,51 @@ export default function Cart() {
             fontSize: "18px",
             fontWeight: "bold",
             fontFamily: "cursive",
+            padding: "0 16%",
           }}
         >
           ITEMS ADDED TO YOUR SHOPPING BAG (2)
         </h2>
       </div>
       <Cart1></Cart1>
+      <hr style={{ border: "2px solid #d2d2ce",marginTop:"5%", backgroundColor: "#d2d2ce" }} />
+      <Cartfooter></Cartfooter>
+      <hr style={{ border: "2px solid #d2d2ce", backgroundColor: "#d2d2ce" }} />
+      <Box
+        display={"flex"}
+        justifyContent="space-around"
+        alignContent={"center"}
+        m="20px 0px"
+        mb={"10%"}
+      >
+        <Box textDecoration={"underline"} mt="15px">
+          <Link to="/">BACK TO SHOPPING</Link>
+        </Box>
+        <Box>
+          <Link to="/">
+            <Button bg={"#febf08"} padding="25px">
+              {" "}
+              <img
+                src="https://www.yoox.com/media/yoox16/logos/paypal_logo_txt.png?v=1"
+                alt="paypal"
+              />{" "}
+              CHECK OUT
+            </Button>
+          </Link>{" "}
+          or
+          <Link to="/">
+            {" "}
+            <Button
+              bg={"black"}
+              color={"white"}
+              fontSize={"15px"}
+              padding="25px 10px"
+            >
+              PROCEED WITH YOUR ORDER {">"}{" "}
+            </Button>{" "}
+          </Link>
+        </Box>
+      </Box>
     </div>
   );
 }
