@@ -54,7 +54,7 @@ export const LandingPage=()=>{
                <img src="https://mobile.yoox.com/images/yoox80/banners/5569_15_splash_D.jpg?634485886601286852" />
              </div>
              <div className="name" >
-                 <h3>WOMEN</h3>
+                 <h3>DESIGN+ART</h3>
              </div>
              <div className="view" >
              {/* <a href="">[VIEW MORE]</a> */}
