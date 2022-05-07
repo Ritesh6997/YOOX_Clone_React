@@ -30,7 +30,7 @@ export default function Nav2() {
             <Link to="/designart">DESIGN+ART</Link>
           </div>
 
-          <img width={"70px"} src={yooxlogop} alt="Logo" />
+          <img style={{width:"60px"}} width={"70px"} src={yooxlogop} alt="Logo" />
 
           <div
             style={{
@@ -42,7 +42,7 @@ export default function Nav2() {
             <Link style={{ fontSize: "20px" }} to="/designart">
               {BsSearch()}{" "}
             </Link>
-            <Link style={{ fontSize: "20px" }} to="/kids">
+            <Link style={{ fontSize: "20px" }} to="/wishlist">
               {BsSuitHeart()} <span className="quantitydiv">10</span>
             </Link>
             <Link style={{ fontSize: "20px" }} to="/cart">

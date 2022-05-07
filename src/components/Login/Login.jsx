@@ -44,12 +44,12 @@ export const Login = () => {
       .then((res) => alert(res.data.message));
   };
   return (
-    <div>
+    <div style={{ textAlign: "center", padding: "10px" }}>
       {console.log("user", user)}
       <p>Its great to see you again</p>
       <div className="firstSpan">
         <p>Log in with</p>
-        <div>
+        <div className="gg">
           <GoogleLogin
             clientId="739317188642-qmnkdd4sei6hbpcth0n3m91q9sgbpikp.apps.googleusercontent.com"
             buttonText="Login"
@@ -61,6 +61,7 @@ export const Login = () => {
         </div>
         <p>or with your e-mail address</p>
         <input
+          className="inp"
           type="email"
           name="email"
           value={user.email}
@@ -70,6 +71,7 @@ export const Login = () => {
         <br />
         <br />
         <input
+          className="inp"
           type="password"
           name="password"
           value={user.password}

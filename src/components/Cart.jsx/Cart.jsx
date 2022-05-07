@@ -42,7 +42,7 @@ export default function Cart() {
           <Link to="/">
             <Button bg={"#febf08"} padding="25px">
               {" "}
-              <img
+              <img style={{width:"60px"}}
                 src="https://www.yoox.com/media/yoox16/logos/paypal_logo_txt.png?v=1"
                 alt="paypal"
               />{" "}
@@ -94,7 +94,7 @@ export default function Cart() {
           <Link to="/">
             <Button bg={"#febf08"} padding="25px">
               {" "}
-              <img
+              <img style={{width:"60px"}}
                 src="https://www.yoox.com/media/yoox16/logos/paypal_logo_txt.png?v=1"
                 alt="paypal"
               />{" "}

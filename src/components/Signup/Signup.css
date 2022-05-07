@@ -2,22 +2,22 @@
     text-align: center;
     background-color: #F3F3F3;
     border: 1px solid transparent;
-    height: 150px;
+    margin: auto;
 }
 .myox h3{
     color: #333333;
     font-size: 18px;
-    /* margin-bottom: -16px; */
     font-family: Montserrat,sans-serif;
 }
 .myox h2{
     color: #333333;
     font-size: 14px;
+    padding: 20px;
 }
 .myox p{
     color: #333333;
-    font-size: 14px;
-    /* margin-bottom: -22px; */
+    font-size: 16px;
+    padding:"0px 10px"
 }
 .myox h4{
 font-size: 14px;
@@ -27,16 +27,18 @@ text-decoration: underline solid rgb(51,51,51);
 
 
 .form{
-    height: 1110px;
+    
     background-color: #FFFFFF;
     width: 400px;
     border: 1px solid transparent;
     margin: auto;
+    padding:"10px" ;
 }
 .form h3{
     /* margin-top: 40px; */
     font-size: 14px;
     color: #333333;
+    margin-top: 10px;
 }
 
 .gg{
@@ -46,14 +48,15 @@ text-decoration: underline solid rgb(51,51,51);
     background-color: #FFFFFF;
     font-size: 20px;
 }
-input{
+.inpsignup{
     height: 40px;
     width: 362px;
     font-weight: 700;
     line-height: 20px;
     color: #333333;
-    background-color: #F6F6F6;
-    /* border-bottom: 2px solid #F6F6F6; */
+    text-align: center;
+
+    border-bottom: 2px solid #8d8585;
     /* border: none; */
     background: 0% 0%;
 }
