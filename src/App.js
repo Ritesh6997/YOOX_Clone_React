@@ -1,7 +1,7 @@
-import { Checkout } from './Components/CheckOut/CheckOut';
+import { Checkout } from './components/CheckOut/CheckOut';
 import {Route, Routes } from "react-router-dom";
-import { PaymentPage } from './Components/Payment/Payment';
-import './Components/CheckOut/checkout.css'
+import { PaymentPage } from './components/Payment/Payment';
+import './components/CheckOut/checkout.css'
 
 
 function App() {
