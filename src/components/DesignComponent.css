@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Montserrat:wght@100;300;400;500;700&family=Roboto:wght@100&display=swap");
+
 .design-container {
   width: 90%;
   margin: auto;
@@ -95,13 +97,21 @@ justify-content: center;
 .landing4-left-img2 p{
     line-height: 0px;
 }
-.right {
-}
+
 .right img {
   width: 95%;
 }
 .carousal{
-    margin-top: 50px;
+    margin-top: 80px;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+
+}
+.carousal h3{
+  font-weight: 700;
+}
+.banner {
+  margin-top: 50px;
 }
 .banner img{
   width: 100%;

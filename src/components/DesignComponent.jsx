@@ -16,27 +16,20 @@ const DesignComponent = () => {
   useEffect(() => {
     getData();
   }, []);
-  // function getData ()  {
-  //   axios
-  //     .get("https://yooxapi.herokuapp.com/products/design")
-  //     .then(function (response) {
-  //       // handle success
-  //       console.log("response");
-  //     })
-  //     .catch(function (error) {
-  //       // handle error
-  //       console.log(error);
-  //     });
-  // };
-   const getData = () => {
-     fetch("https://yooxapi.herokuapp.com/products/design")
-       .then((d) => d.json())
-       .then((data) => {
-         setData(data)
-         console.log("DATA");
-       });
-   };
-   console.log('ffffffff',data);
+  function getData ()  {
+    axios
+      .get("https://yooxapi.herokuapp.com/products/design")
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+        setData(response.data)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  };
+   
 
   return (
     <>
@@ -71,7 +64,8 @@ const DesignComponent = () => {
           </div>
         </div>
         <div className="carousal">
-          <Hero />
+          <h3>TOP PICKS</h3>
+          <Hero data={data}/>
         </div>
         <div className="banner">
           <img src={banner} alt="" />

@@ -7,7 +7,7 @@ import sl1 from "../img/sli1f.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";;
 
-const Hero = () => {
+const Hero = ({data}) => {
         const settings = {
           infinite: false,
           speed: 500,
@@ -61,10 +61,12 @@ const Hero = () => {
     
   return (
     <Slider {...settings} className="poc">
-      {EntertainmentImage.map((image) => {
+      {data.map((item) => {
         return (
-          <div>
-            <img src={image} alt="" style={{ width: "200px" }} />
+          <div >
+            <img src={item.img[0]} alt="" style={{ width: "200px" }} />
+            <p style={{ fontSize: "14px", fontWeight: "700" }}>{item.name}</p>
+            <p style={{ fontSize: "11px", fontWeight: "500" }}>us$ {item.finalPrice}</p>
           </div>
         );
       })}

@@ -8,7 +8,7 @@ export const SampleNextArrow = (props) => {
       className={className}
       style={{
         ...style,
-        color: "grey",
+        color: "white",
         width: "30px",
         height: "46px",
       
@@ -25,7 +25,7 @@ export const SamplePrevArrow = (props) => {
       className={className}
       style={{
         ...style,
-        color: "grey",
+        color: "white",
         width: "30px",
         height: "46px",
      
