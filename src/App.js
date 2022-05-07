@@ -10,7 +10,7 @@ import ProductsDetails from "./components/productsDetails/ProductsDetails";
 import Cart from "./components/Cart.jsx/Cart";
 import Footer from "./components/footer/footer";
 import {LandingPage} from "./components/LandingPage/LandingPage"
-
+import {Login} from "./components/Login/Login"
 function App() {
   return (
     <div style={{backgroundColor: "whitesmoke",}}>
