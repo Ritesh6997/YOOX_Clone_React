@@ -9,6 +9,8 @@ import DesignComponent from "./components/DesignComponent";
 import ProductsDetails from "./components/productsDetails/ProductsDetails";
 import Cart from "./components/Cart.jsx/Cart";
 import Footer from "./components/footer/footer";
+import {LandingPage} from "./components/LandingPage/LandingPage"
+
 function App() {
   return (
     <div style={{backgroundColor: "whitesmoke",}}>
@@ -16,7 +18,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         {/* landing page -Route*/}
-        {/* <Route path="/" element={<LandingPage />}></Route> */}
+        <Route path="/" element={<LandingPage />}></Route>
         {/* signup page -Route*/}
         {/* <Route path="/signUp" element={<Signup />}></Route> */}
         {/* women,men,kids page -Route*/}

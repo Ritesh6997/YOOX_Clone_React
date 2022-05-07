@@ -1,0 +1,71 @@
+.LandingPage_title{
+    /* border: 1px solid red; */
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+}
+.LandingPage_title img{
+    width: 15%;
+}
+.LandingPage_title h3{
+    margin-top: 0px;
+}
+
+.LandingPage_sub_div{
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: auto; 
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.LandingPage_sub_div div{
+    margin: 1.5px;
+}
+.LandingPage_main{
+    transition: 0s;
+}
+.LandingPage_main:hover{
+    transform: scale(1.1);
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+
+}
+.landing_poster{
+    margin-bottom: 0px;
+}
+
+.landing_poster img{
+    width: 100%;
+}
+.name{
+    background-color: #333333;
+    color: white;
+    /* border: 1px solid red; */
+    margin-top: 0px;
+    padding: 5px;
+    margin-top: 0px;
+
+}
+@media screen and (min-width: 721px)and(max-width: 1024px){
+    
+}
+
+.LandingPage_sub_div  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 2rem;
+  }
+@media screen and (min-width: 0px)and(max-width: 320px){
+    .LandingPage_sub_div div{
+        grid-template-columns: 1fr ,
+    }
+
+}
+@media screen and (min-width: 321px)and(max-width: 720px){
+    .LandingPage_sub_div{
+        grid-template-columns: 1fr 1fr ,
+    }
+
+}
+
