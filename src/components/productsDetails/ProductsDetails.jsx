@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ProductsDetails.css";
-import infoPNG from "../../img/info.png"
+import infoPNG from "../../img/info.png";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 const ProductsDetails = () => {
   const [idImg, setImg] = useState(0);
   var data = {
@@ -21,7 +23,9 @@ const ProductsDetails = () => {
   };
 
 console.log("DDDDDDDDDDDDDDDDDDDDDdd");
-
+  const product = useSelector(store => store.product.productData);
+  console.log(product, "product Data");
+  const {id}=useParams()
   const IMG = ({ src, index }) => {
     return (
       <>

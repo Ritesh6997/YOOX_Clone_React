@@ -13,7 +13,7 @@ export const sortProduct = (data) => {
 };
 
 export const getProduct = (val) => async (dispatch) => {
-  axios.get(`https://young-thicket-70794.herokuapp.com/products/${val}`)
+  axios.get(`https://yooxapi.herokuapp.com/products/${val}`)
   .then(function (response) {
     // handle success
     // console.log(response.data);
