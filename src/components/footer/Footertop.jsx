@@ -26,7 +26,7 @@ export default function Footertop() {
 "Affiliation",
 "Careers"];
     return (
-      <div className="listdata" style={{border:"1px solid red"}}>
+      <div className="listdata">
         <div className="flexdiv flexdirC">
           <h2 style={{ fontWeight: "bold" }}>NEW TO YOOX</h2>
           <List data={firstL} />

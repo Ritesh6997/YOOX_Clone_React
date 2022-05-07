@@ -19,7 +19,7 @@ export default function Contactbar() {
         h="70px"
         m="auto"
         bgGradient="linear(to-t, green.200, pink.500)"
-        bg="white"
+        bg={"whitesmoke"}
         fontSize={25.5}
         fontWeight={"555"}
         fontFamily={"Montserrat,sans-serif"}
