@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductsDetails.css";
 import infoPNG from "../../img/info.png";
 import { useSelector } from "react-redux";
@@ -22,10 +22,23 @@ const ProductsDetails = () => {
     ],
   };
 
-console.log("DDDDDDDDDDDDDDDDDDDDDdd");
-  const product = useSelector(store => store.product.productData);
+  console.log("DDDDDDDDDDDDDDDDDDDDDdd");
+  const product = useSelector((store) => store.product.productData);
   console.log(product, "product Data");
-  const {id}=useParams()
+  const [proData, setData] = useState({});
+  const { id } = useParams();
+  console.log(id);
+  useEffect(() => {
+    for (let i = 0; i < product.length; i++) {
+      if (id === product[i]._id) {
+        setData(product[i]);
+      }
+      
+    }
+    }, []);
+console.log(proData);
+
+  
   const IMG = ({ src, index }) => {
     return (
       <>
@@ -38,47 +51,58 @@ console.log("DDDDDDDDDDDDDDDDDDDDDdd");
     <div className="product-details-container">
       <div className="product-details-left">
         <div className="main-image-display">
-          <img src={data.img[idImg]} alt="" />
+          {proData.img? <img  src={proData.img[idImg]} alt="" />:""}
+          
         </div>
         <div className="sub-image-display">
-          {data.img.map((item, index) => {
+          {proData.img? proData.img.map((item, index) => {
             return (
-              <div className={`sub-imgs${idImg}`} key={index} onClick={() => setImg(index)}>
+              <div
+                className={`sub-imgs${idImg}`}
+                key={index}
+                onClick={() => setImg(index)}
+              >
                 <IMG src={item} index={index} />
               </div>
             );
-          })}
+          }):""}
         </div>
       </div>
       <div className="product-details-right">
         <div className="product-text">
-          <h3>MAISON NAGIELA</h3>
-          <p>Laced Shoes</p>
+          <h3>{ proData.name}</h3>
+          <p>{ proData.type}</p>
         </div>
         <div className="product-price">
           <div className="show-actual-discount">
-            <span>US$ {data.initialPrice}</span>
-            <p>{Math.floor((100 * (data.initialPrice - data.finalPrice)) / data.initialPrice)}% OFF</p>
-            <img src={infoPNG} />
+            <span className="show-actual-discountspan">
+              US$ {proData.initialPrice}
+            </span>
+            <p>
+              {Math.floor(
+                (100 * (proData.initialPrice - proData.finalPrice)) /
+                  proData.initialPrice
+              )}
+              % OFF
+            </p>
+            <img className="show-actual-discountimg" src={infoPNG} />
           </div>
           <div className="show-actual-price">
-            <h3>US$ 790</h3>
+            <h3 className="show-actual-priceh3">US$ {proData.finalPrice}</h3>
           </div>
         </div>
         <div className="show-color">
           <p>{data.colorName}</p>
-          {data.color.map((color) => {
-            return (
+          {proData.color? 
               <div>
-                <span style={{ backgroundColor: color }}></span>
+                <span style={{ backgroundColor: proData.color }}></span>
               </div>
-            );
-          })}
+            :""}
         </div>
         <div className="pdt-size">
-          {data.size.map((iten) => {
-            return <div>{iten}</div>;
-          })}
+          {proData.size? proData.size.map((iten) => {
+            return <div className="pdt-sizediv">{iten}</div>;
+          }):""}
         </div>
         <div className="addto-bag-btn">
           <button>ADD TO SHOPPING BAG</button>

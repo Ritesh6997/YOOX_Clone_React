@@ -28,8 +28,8 @@
   justify-content: space-between;
   width: 100%;
 }
-.sub-image-display {
-}
+/* .sub-image-display {
+} */
 .sub-image-display div {
   height: 80px;
   border: 1px solid rgb(223, 216, 216);
@@ -94,16 +94,16 @@
   justify-content: flex-start;
   gap: 20px;
 }
-.show-actual-discount span {
+.show-actual-discountspan {
   color: gray;
   text-decoration: line-through;
 }
 
-.show-actual-price h3 {
+.show-actual-priceh3 {
   margin-bottom: 10px;
   margin-top: -7px;
 }
-.show-actual-discount img {
+.show-actual-discountimg {
   cursor: pointer;
   width: 15px;
 }
@@ -114,7 +114,7 @@
   gap: 10px;
   padding: 8px;
 }
-.pdt-size div {
+.pdt-sizediv {
   display: flex;
   align-items: center;
   justify-content: center;
