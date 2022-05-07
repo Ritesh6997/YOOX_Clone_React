@@ -40,7 +40,7 @@ export default function Nav1() {
             style={{ display: "flex", columnGap: "10px" }}
           >
             {!isAuth ? (
-              <Link style={{ display: "flex" }} to="/Home">
+              <Link style={{ display: "flex" }} to="/signup">
                 {BsFillPencilFill()} REGISTER{" "}
               </Link>
             ) : (
@@ -49,7 +49,7 @@ export default function Nav1() {
               </Link>
             )}
             {!isAuth ? (
-              <Link to="/">
+              <Link to="/login">
                 <LockIcon></LockIcon> LOGIN{" "}
               </Link>
             ) : (

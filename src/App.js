@@ -9,8 +9,10 @@ import DesignComponent from "./components/DesignComponent";
 import ProductsDetails from "./components/productsDetails/ProductsDetails";
 import Cart from "./components/Cart.jsx/Cart";
 import Footer from "./components/footer/footer";
-import {LandingPage} from "./components/LandingPage/LandingPage"
-import {Login} from "./components/Login/Login"
+import { LandingPage } from "./components/LandingPage/LandingPage";
+import { Login } from "./components/Login/Login";
+import { Signup } from "./components/Signup/Signup";
+import { Wishlist } from "./components/Wishlist/Wishlist";
 function App() {
   return (
     <div style={{backgroundColor: "whitesmoke",}}>
@@ -19,8 +21,9 @@ function App() {
       <Routes>
         {/* landing page -Route*/}
         <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         {/* signup page -Route*/}
-        {/* <Route path="/signUp" element={<Signup />}></Route> */}
+        <Route path="/signup" element={<Signup/>}></Route>
         {/* women,men,kids page -Route*/}
         <Route path="/:name" element={<Products />}></Route>
         {/* design page -Route*/}
@@ -29,6 +32,7 @@ function App() {
         <Route path="/viewAll" element={<ProductViewAll />}></Route>
         {/* ProductDetails -Route*/}
         <Route path="/product/:id" element={<ProductsDetails />}></Route>
+        <Route path="/whishlist" element={<Wishlist />}></Route>
         {/* Cart page -Route*/}
         <Route
           path="/cart"

@@ -63,8 +63,8 @@ export const Signup = () => {
   `;
 
   return (
-    <div>
-      <Hr></Hr>
+    <div style={{ height: "1100px" }}>
+      <hr></hr>
       <div className="myox">
         <h3>MYO0X</h3>
         <h2>REGISTRATION</h2>
@@ -73,6 +73,7 @@ export const Signup = () => {
           registered customers only
         </p>
         <h4>Discover all the benefits</h4>
+        <br />
         <div className="form">
           <h3>REGISTER WITH YOUR SOCIAL MEDIA ACCOUNT</h3>
           <GoogleLogin
@@ -87,6 +88,7 @@ export const Signup = () => {
           <br />
           <h3>OR WITH YOUR EMAIL</h3>
           <input
+            className="inpsignup"
             type="text"
             name="first_name"
             value={user.first_name}
@@ -97,6 +99,7 @@ export const Signup = () => {
           <br />
           <br />
           <input
+            className="inpsignup"
             type="text"
             name="last_name"
             value={user.last_name}
@@ -107,6 +110,7 @@ export const Signup = () => {
           <br />
           <br />
           <input
+            className="inpsignup"
             type="text"
             name="email"
             value={user.email}
@@ -117,6 +121,7 @@ export const Signup = () => {
           <br />
           <br />
           <input
+            className="inpsignup"
             type="password"
             name="password"
             value={user.password}
@@ -126,17 +131,28 @@ export const Signup = () => {
           />
           <p>Personalize your shopping experience</p>
           <div className="checkbox">
-            <input type="radio" name="gender" value="male" />
+            <input
+              className="inpsignup"
+              type="radio"
+              name="gender"
+              value="male"
+            />
             <p>Female</p>
-            <input type="radio" name="gender" value="female" />
+            <input
+              className="inpsignup"
+              type="radio"
+              name="gender"
+              value="female"
+            />
             <p>Male</p>
           </div>
 
-          <p>
+          <p style={{padding:"0 10px"}}>
             If you are over 18 years old, celebrate your birthday with us: We
             have a surprise for you.
           </p>
           <input
+            className="inpsignup"
             type="date"
             name="dob"
             value={user.dob}
@@ -146,6 +162,7 @@ export const Signup = () => {
           />
           <p>CELL PHONE</p>
           <input
+            className="inpsignup"
             type="number"
             name="number"
             value={user.number}
@@ -162,7 +179,7 @@ export const Signup = () => {
               Conditions of Use
             </span>
             <div className="chekbox">
-              <input type="checkbox" />
+              <input className="inpsignup" type="checkbox" />
               <p>
                 I agree to the use of my personal data in order to be updated on
                 new arrivals, informed about exclusive items and contacted as
@@ -179,7 +196,7 @@ export const Signup = () => {
           </button>
         </div>
 
-        <Hr></Hr>
+        <hr></hr>
       </div>
     </div>
   );
