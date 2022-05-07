@@ -1,0 +1,168 @@
+*{
+    font-family: Montserrat, sans-serif;
+}
+.container{
+    background-color: rgb(243,243,243);
+    display: flex;
+    width: 100%;
+}
+.main{
+    margin-left: 100px;
+    margin-right: 50px;
+    width: 50%;
+    padding-top: 50px;
+    /* border: 1px solid red; */
+}
+.main2{
+    width: 25%;
+    /* border: 1px solid red; */
+    height: 900px;
+    background-color: white;
+    position: sticky;
+    top: 130px;
+}
+
+.email-box{
+    height: 100px;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-top:25px;
+    padding-left: 25px;
+    background-color: white;
+    /* border: 1px solid red; */
+}
+.checkoutHeading{
+    font-family: "Playfair Display", sans-serif;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+.Shipping-box{
+    margin-top: 30px;
+    background-color: white;
+    width: 100%;
+    padding-top:25px;
+    padding-left: 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+input.largerCheckbox {
+    width: 20px;
+    height: 20px;
+}
+.button{
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    height: 50px;
+    width: 260px;
+    background-color: rgb(51,51,51);
+    margin-left: 300px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+.orderSubTitles{
+    font-size: 12px;
+    font-weight: 700;
+    font-family:  "Montserrat", sans-serif;
+    line-height: 14px;
+    margin-top: 30px;
+}
+.orderPrices{
+    font-size: 13px;
+    color: #666666;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 5px;
+}
+.totalPrice{
+    font-size: 15px;
+    font-weight: 700;
+    font-family:  "Montserrat", sans-serif;
+    line-height: 14px;
+    background-color: #fffe94;
+    margin-left: 220px;
+}
+.dressname{
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 14px;
+    font-family:  "Montserrat", sans-serif;
+}
+.dressdetails{
+    color: rgb(102, 102, 102);
+    font-size: 11px;
+}
+.dressPrice{
+    font-size: 11px;
+    font-weight: 700;
+}
+.orderContainer{
+    margin-left: 15px;
+}
+.FaqContainer{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    /* border: 1px solid red; */
+}
+.ques{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    line-height: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+.ans{
+    font-size: 11px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 0px;
+}
+.checkoutFooter{
+    background-color: rgb(51,51,51);
+    text-align: center;
+    margin-top: 50px;
+    height: 100px;
+    color: white;
+    font-size: 13px;
+}
+.checkoutNavbar{
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+.yooxlogo{
+    width: 100px;
+    padding-top: 10px;
+}
+.shippingBox{
+    background-color: white;
+    width: 100%;
+    margin-top: 30px;
+    padding-top:25px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+.shippingSubTitles{
+    font-size: 13px;
+    font-weight: 700;
+    font-family:  "Montserrat", sans-serif;
+    line-height: 14px;
+}
+.creditCardImages{
+    width: 30px;
+}
+.orderPlaced{
+    background-color: rgb(225,225,225);
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid red;
+    text-align: center;
+}
+/* .orderSuccess{
+    background-color: rgb(225,225,225);
+    height: 600px;
+} */

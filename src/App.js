@@ -1,10 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Checkout } from './Components/CheckOut/CheckOut';
+import {Route, Routes } from "react-router-dom";
+import { PaymentPage } from './Components/Payment/Payment';
+import './Components/CheckOut/checkout.css'
+
 
 function App() {
   return (
     <div>
-      <h1 className="center">YOOX</h1>
+      <Routes>
+        <Route path='/' element={<Checkout />}></Route>
+        <Route path='/payment' element={<PaymentPage />}></Route>
+      </Routes>
     </div>
   );
 }
