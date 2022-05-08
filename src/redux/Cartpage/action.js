@@ -10,6 +10,13 @@ export const cartLength = () => {
         type:"CL"
     }
 }
+
+export const Cartsum = (value) => {
+    return {
+        type: "CartSum",
+        payload:value,
+    }
+}
 const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
 export const getCartData = ()=> async (dispatch) => {
     console.log("1234cart");

@@ -23,23 +23,32 @@ export default function Cart1() {
             </div>
           </div>
           <div>{el.productId.colorName}</div>
-          <Counter value1={el.count} value2={el.productId._id}value3={el._id}></Counter>
+          <Counter
+            value1={el.count}
+            value2={el.productId._id}
+            value3={el._id}
+          ></Counter>
           <div style={{ display: "flex", columnGap: "10px" }}>
             <div className="flexdivC">
-              <span style={{ textDecoration: "line-through" }}>
+              {el.productId.initialPrice? <span style={{ textDecoration: "line-through" }}>
                 ${el.productId.initialPrice}
-              </span>
+              </span>:"" }
+             
               <span>${el.productId.finalPrice}</span>
             </div>
             <div>
-              <span>
-                {Math.round(
-                  ((el.productId.initialPrice - el.productId.finalPrice) /
-                    el.productId.initialPrice) *
-                    100
-                )}
-                % OFF
-              </span>
+              {el.productId.initialPrice ? (
+                <span>
+                  {Math.round(
+                    ((el.productId.initialPrice - el.productId.finalPrice) /
+                      el.productId.initialPrice) *
+                      100
+                  )}
+                  % OFF
+                </span>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>

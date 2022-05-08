@@ -22,7 +22,8 @@
 .cartCard{
     margin: auto;
     margin-top: 20px;
-    justify-content: space-between;
+    column-gap: 15%;
+    text-align: left;
     width:70% ;
 }
 .disflexdiv{
