@@ -44,7 +44,7 @@ export const Signup = () => {
     const { first_name, last_name, email, password, dob, number } = user;
     if (first_name && last_name && email && password && dob && number) {
       axios
-        .post("http://localhost:9002/register", user)
+        .post("https://yooxapi.herokuapp.com/user/register", user)
         .then((res) => console.log(res));
       alert("Succesfully Added");
       nav("/login");

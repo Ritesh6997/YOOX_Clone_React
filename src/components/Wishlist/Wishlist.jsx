@@ -4,6 +4,11 @@ import { useState } from "react";
 import axios from "axios";
 
 export const Wishlist = () => {
+  useEffect(() => {
+    axios.get(
+      "https://yooxapi.herokuapp.com/wishlistData/62761ff369dd7bab53b8b50c"
+    );
+  },[])
   const [data, setData] = useState([{
     "name": "SALVATORE FERRAGAMO",
     "type": "Laced shoes",
@@ -47,7 +52,7 @@ export const Wishlist = () => {
   return (
     <div>
       <div className="drmbox">
-        <h2>DREAM BOX{}</h2>
+        <h2 style={{ fontWeight: "bold", fontSize: "20px" }}>DREAM BOX</h2>
         <p className="drmboxp">
           Keep an eye on the items that you love the most, and don't miss out on
           your last chance to buy them
@@ -55,8 +60,10 @@ export const Wishlist = () => {
       </div>
       <div className="scnd_name">
         <div className="firstBox">
-          <h1>SHOPPING WEEKEND</h1>
-          <h1>20% OFF</h1>
+          <h1 style={{ fontWeight: "500", fontSize: "40px" }}>
+            SHOPPING WEEKEND
+          </h1>
+          <h1 style={{ fontWeight: "bolder", fontSize: "40px" }}>20% OFF</h1>
           <h2>Markdown applied in Shopping Bag</h2>
         </div>
         <div className="secondBox">

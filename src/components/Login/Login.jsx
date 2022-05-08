@@ -3,13 +3,15 @@ import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
 import GoogleLogin from "react-google-login";
-
+import { useDispatch } from "react-redux";
+import { store } from "../../redux/store";
+import { isAuthAction } from "../../redux/isAuth/action";
 export const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
+  const dispatch = useDispatch();
   const responseSuccessGoogle = (response) => {
     console.log(response);
     axios.get("http://localhost:9002/users").then(function (res) {
@@ -40,8 +42,15 @@ export const Login = () => {
 
   const login = () => {
     axios
-      .post("http://localhost:9002/login", user)
-      .then((res) => alert(res.data.message));
+      .post("https://yooxapi.herokuapp.com/user/login", user)
+      .then((res) => {
+        console.log(res.data.user._id);
+        alert(res.data.message);
+        localStorage.setItem("userIdyoox", JSON.stringify(res.data.user._id));
+        let userid = localStorage.getItem("userIdyoox");
+        dispatch(isAuthAction(userid));
+      });
+    
   };
   return (
     <div style={{ textAlign: "center", padding: "10px" }}>

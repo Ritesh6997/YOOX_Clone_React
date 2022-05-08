@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, } from '@chakra-ui/react';
 import { Link } from "react-router-dom"
 import { LockIcon, } from "@chakra-ui/icons";
@@ -8,10 +8,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isAuthAction } from '../../redux/isAuth/action';
 export default function Nav1() {
   // const isAuth = false;
-  const isAuth = useSelector(store => store.isAuth.IsAuth);
-  console.log(isAuth,store);
+  const isAuth = useSelector((store) => store.isAuth.IsAuth);
   const dispatch = useDispatch();
-  
+  console.log(isAuth);
+  const userIddata = localStorage.getItem("userIdyoox");
+  if (!isAuth) {
+    dispatch(isAuthAction(userIddata));
+  }
+  useEffect(() => {
+    console.log(isAuth);
+  },[isAuth])
   console.log(isAuth);
   return (
     <div>
@@ -53,7 +59,9 @@ export default function Nav1() {
                 <LockIcon></LockIcon> LOGIN{" "}
               </Link>
             ) : (
-              <Link to="/">
+                <Link onClick={() => {
+                  localStorage.removeItem("userIdyoox");
+              }} to="/">
                 <LockIcon />
                 LOGOUT{" "}
               </Link>
