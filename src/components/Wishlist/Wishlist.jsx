@@ -4,9 +4,30 @@ import { useState } from "react";
 import axios from "axios";
 
 export const Wishlist = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([{
+    "name": "SALVATORE FERRAGAMO",
+    "type": "Laced shoes",
+    "initialPrice": "961.00",
+    "finalPrice":"393.00" ,
+    "color":["#85b09a"] ,
+    "colorName":"Sage green",
+    "size":["6.5","7"],
+    "category": ["men","shoes"],
+    "img" : ["https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490"]
+  },
+  {
+    "name": "SALVATORE FERRAGAMO",
+    "type": "Laced shoes",
+    "initialPrice": "961.00",
+    "finalPrice":"393.00" ,
+    "color":["#85b09a"] ,
+    "colorName":"Sage green",
+    "size":["6.5","7"],
+    "category": ["men","shoes"],
+    "img" : ["https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490"]
+}]);
   console.log(data);
-
+  
   const deleteProduct = (id) => {
     const fltr = data.filter((i) => {
       return i.id !== id;
@@ -27,7 +48,7 @@ export const Wishlist = () => {
     <div>
       <div className="drmbox">
         <h2>DREAM BOX{}</h2>
-        <p>
+        <p className="drmboxp">
           Keep an eye on the items that you love the most, and don't miss out on
           your last chance to buy them
         </p>
@@ -46,7 +67,7 @@ export const Wishlist = () => {
           <div className="second">
             {data.map((item) => (
               <div key={item.id} className="mapp">
-                <img src={item.img} alt="" />
+                <img className="imgwish" src={item.img[0]} alt="" />
                 <h5>{item.name}</h5>
                 <p>{item.finalPrice}</p>
                 <h5>{item.size[0]}</h5>

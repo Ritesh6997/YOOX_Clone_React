@@ -46,14 +46,15 @@ export const Login = () => {
   return (
     <div style={{ textAlign: "center", padding: "10px" }}>
       {console.log("user", user)}
-      <p>Its great to see you again</p>
+      <p style={{ fontSize: "20px", fontWeight: "bold" }}>Its great to see you again</p>
       <div className="firstSpan">
         <p>Log in with</p>
-        <div className="gg">
+        <div className="ggg">
           <GoogleLogin
+            style={{fontWeight:"bold",textDecoration:"uppercase"}}
             clientId="739317188642-qmnkdd4sei6hbpcth0n3m91q9sgbpikp.apps.googleusercontent.com"
             buttonText="Login"
-            className="gg"
+            className="ggg"
             onSuccess={responseSuccessGoogle}
             onFailure={responseErrorGoogle}
             cookiePolicy={"single_host_origin"}

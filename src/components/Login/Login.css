@@ -10,17 +10,18 @@
 .fb{
     background-color: blueviolet;
 }
-.gg{
-        border: 2px solid #F2F2F2;
+.ggg{
         width: 350px;
+        height: 100%;
         background-color: #FFFFFF;
-        font-size: 40px;
+        font-weight: bold;
+        font-weight: bold;
 }
 .login{
     margin-top: 10px;
     border: 2px solid #201f1f;
     height: 50px;
-    width: 373px;
+    width: 350px;
     background-color: #333333;
     font-size: 20px;
     color: #FFFFFF;

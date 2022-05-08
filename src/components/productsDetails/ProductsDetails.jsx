@@ -6,27 +6,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 const ProductsDetails = () => {
   const [idImg, setImg] = useState(0);
-  // var data = {
-  //   name: "SALVATORE FERRAGAMO",
-  //   type: "Laced shoes",
-  //   initialPrice: "961.00",
-  //   finalPrice: "393.00",
-  //   color: ["#85b09a"],
-  //   colorName: "Sage green",
-  //   size: ["6.5", "7"],
-  //   category: ["men", "shoes"],
-  //   img: [
-  //     "https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490",
-  //     "https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490",
-  //     "https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490",
-  //     "https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490",
-  //   ],
-  // };
-
-  // console.log("DDDDDDDDDDDDDDDDDDDDDdd");
-
-
-  function Addtocart() {
+    function Addtocart() {
     fetch("", {
       method: "POST",
       headers: {
@@ -117,7 +97,7 @@ console.log(proData);
           </div>
         </div>
         <div className="show-color">
-          <p>{data.colorName}</p>
+          <p>{proData.colorName ? `${proData.colorName}` :""}</p>
           {proData.color? 
               <div>
                 <span style={{ backgroundColor: proData.color }}></span>

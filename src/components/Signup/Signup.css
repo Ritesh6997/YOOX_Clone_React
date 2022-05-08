@@ -3,6 +3,7 @@
     background-color: #F3F3F3;
     border: 1px solid transparent;
     margin: auto;
+    color: black;
 }
 .myox h3{
     color: #333333;
@@ -14,10 +15,15 @@
     font-size: 14px;
     padding: 20px;
 }
-.myox p{
-    color: #333333;
+.myoxp{
+    color: #101010;
     font-size: 16px;
-    padding:"0px 10px"
+    margin: auto;
+    margin-top: 10px ;
+    margin-bottom: 10px;
+    width: 360px;
+    text-align: justify;
+    background-color: #f0ebeb;
 }
 .myox h4{
 font-size: 14px;
@@ -53,12 +59,13 @@ text-decoration: underline solid rgb(51,51,51);
     width: 362px;
     font-weight: 700;
     line-height: 20px;
-    color: #333333;
-    text-align: center;
-
-    border-bottom: 2px solid #8d8585;
-    /* border: none; */
-    background: 0% 0%;
+    text-align: left;
+    padding-left:10px ;
+    color: black;
+    background-color: rgb(231, 226, 226);
+}
+.inpsignup[placeholder]{
+    color: black;
 }
 .checkbox{
     display: flex;
@@ -82,12 +89,13 @@ text-decoration: underline solid rgb(51,51,51);
     width: 170px;
     border: 2px solid #333333;
     margin-top: 70px;
-    color: #333333;
+    color: #0f0f0f;
 }
-span{
+spansignup{
     font-size: 11px;
     font-style: italic;
-    color: #333333;
+    color: #101010;
+    padding: 10PX 20PX;
 }
 .register{
     height: 47px;

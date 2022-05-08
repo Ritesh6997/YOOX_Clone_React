@@ -5,7 +5,7 @@
     text-align: center;
     color: #333333;
 }
-.drmbox p{
+.drmboxp{
     font-size: 12px;
 }
 
@@ -78,7 +78,7 @@
     border: none;
     margin-top: 3px;
 }
-img{
+.imgwish{
     height: 289px;
     width: 227px;
 }
