@@ -6,28 +6,41 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 const ProductsDetails = () => {
   const [idImg, setImg] = useState(0);
+  const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
+  
     function Addtocart() {
-    fetch("", {
+    fetch("https://yooxapi.herokuapp.com/cartData", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...proData }),
+      body: JSON.stringify({
+        productId: proData._id,
+        useId: useridData,
+      }),
     });
     
   };
 
   function Addtowishlist() {
-    fetch("", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...proData }),
-    });
-  };
+    axios
+      .post(`https://yooxapi.herokuapp.com/wishlistData`, {
+        useId: `${useridData}`,
+        productId: `${proData._id}`,
+      })
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }
   const product = useSelector((store) => store.product.productData);
   console.log(product, "product Data");
   const [proData, setData] = useState({});

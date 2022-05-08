@@ -4,51 +4,27 @@ import { useState } from "react";
 import axios from "axios";
 
 export const Wishlist = () => {
-  useEffect(() => {
-    axios.get(
-      "https://yooxapi.herokuapp.com/wishlistData/62761ff369dd7bab53b8b50c"
-    );
-  },[])
-  const [data, setData] = useState([{
-    "name": "SALVATORE FERRAGAMO",
-    "type": "Laced shoes",
-    "initialPrice": "961.00",
-    "finalPrice":"393.00" ,
-    "color":["#85b09a"] ,
-    "colorName":"Sage green",
-    "size":["6.5","7"],
-    "category": ["men","shoes"],
-    "img" : ["https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490"]
-  },
-  {
-    "name": "SALVATORE FERRAGAMO",
-    "type": "Laced shoes",
-    "initialPrice": "961.00",
-    "finalPrice":"393.00" ,
-    "color":["#85b09a"] ,
-    "colorName":"Sage green",
-    "size":["6.5","7"],
-    "category": ["men","shoes"],
-    "img" : ["https://www.yoox.com/images/items/17/17151065SF_14_f.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_r.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_d.jpg?impolicy=crop&width=387&height=490","https://www.yoox.com/images/items/17/17151065SF_14_e.jpg?impolicy=crop&width=387&height=490"]
-}]);
+  const [data, setData] = useState([]);
   console.log(data);
-  
-  const deleteProduct = (id) => {
-    const fltr = data.filter((i) => {
-      return i.id !== id;
-    });
-
-    axios.delete(`http://localhost:8080/data/${id}`);
-    setData(fltr);
+  const delectsdata="something"
+  const deleteProduct = (value) => {
+    console.log(value);
+  axios.delete(`https://yooxapi.herokuapp.com/wishlistData/${value}`)
+    .then(() => getData() );
+    console.log(1);
   };
-
+const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
   useEffect(() => {
-    axios.get("http://localhost:8080/data").then((res) => {
-      //   console.log(res.data);
-      setData(res.data);
-    });
+    getData();
   }, []);
-
+  function getData(){
+    axios
+      .get(`https://yooxapi.herokuapp.com/wishlistData/${useridData}`)
+      .then((res) => {
+        console.log(res.data.wishlistData);
+        setData([...res.data.wishlistData]);
+      });
+  }
   return (
     <div>
       <div className="drmbox">
@@ -73,16 +49,16 @@ export const Wishlist = () => {
           </div>
           <div className="second">
             {data.map((item) => (
-              <div key={item.id} className="mapp">
-                <img className="imgwish" src={item.img[0]} alt="" />
-                <h5>{item.name}</h5>
-                <p>{item.finalPrice}</p>
-                <h5>{item.size[0]}</h5>
-                <p>{item.category[0]}</p>
+              <div key={item.productId.id} className="mapp">
+                <img className="imgwish" src={item.productId.img[0]} alt="" />
+                <h5>{item.productId.name}</h5>
+                <p>{item.productId.finalPrice}</p>
+                <h5>{item.productId.size[0]}</h5>
+                <p>{item.productId.category[0]}</p>
                 <button>ADD TO SHOPPING BAG</button>
                 <button
                   onClick={() => {
-                    deleteProduct(item.id);
+                    deleteProduct(item._id);
                   }}
                 >
                   REMOVE ITEM
