@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, } from '@chakra-ui/react';
 import { Link } from "react-router-dom"
+import { v4 as uuidv4 } from "uuid";
 export default function Nav3() {
   const arr=["NEW" ,"ARRIVALS", "DESIGNERS" ,"CLOTHING", "SHOES", "ACCESSORIES & BAGS", "8 BY YOOX" ,"YOOXYGEN" ,"COLLABORATIONS", "BEST", "OFFERS"]
   return (
@@ -20,10 +21,11 @@ export default function Nav3() {
           alignItems="center"
           justifyContent="center"
           columnGap={"10px"}
-          
         >
           {arr.map((e) => (
-            <Link  to="/Home">{e}</Link>
+            <Link key={uuidv4()} to="/Home">
+              {e}
+            </Link>
           ))}
         </Box>
       </div>

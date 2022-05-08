@@ -1,2 +1,2 @@
 export const IsAuth = "IsAuth";
-export const isAuthAction = () => {return { type: IsAuth }};
+export const isAuthAction = (value) => {return { type: IsAuth,payload:value }};

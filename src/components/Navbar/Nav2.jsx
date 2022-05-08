@@ -30,7 +30,14 @@ export default function Nav2() {
             <Link to="/designart">DESIGN+ART</Link>
           </div>
 
-          <img style={{width:"60px"}} width={"70px"} src={yooxlogop} alt="Logo" />
+          <Link to={"/"}>
+            <img
+              style={{ width: "60px" }}
+              width={"70px"}
+              src={yooxlogop}
+              alt="Logo"
+            />
+          </Link>
 
           <div
             style={{

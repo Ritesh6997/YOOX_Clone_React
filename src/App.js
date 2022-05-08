@@ -32,7 +32,7 @@ function App() {
         <Route path="/viewAll" element={<ProductViewAll />}></Route>
         {/* ProductDetails -Route*/}
         <Route path="/product/:id" element={<ProductsDetails />}></Route>
-        <Route path="/whishlist" element={<Wishlist />}></Route>
+        <Route path="/wishlist" element={<Wishlist />}></Route>
         {/* Cart page -Route*/}
         <Route
           path="/cart"

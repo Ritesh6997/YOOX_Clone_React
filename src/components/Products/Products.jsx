@@ -129,7 +129,7 @@ export const Products = () => {
 
       {/* banner section*/}
       <div className="banner-section">
-      <img className="banner" src={`${page=="women" ? womenBanner : page=="men"?menBanner:kidsBanner}`}></img>
+      <img style={{margin:"0px"}} className="banner" src={`${page=="women" ? womenBanner : page=="men"?menBanner:kidsBanner}`}></img>
       <div className="footer-post-left">
         <div className="titleOne">{page=="women" ? "WONDERFUL WEDDINGS"  :page=="men"?"WONDERFUL WEDDINGS":`LET’S PARTY!`}</div>
             <div className="titleTwo">

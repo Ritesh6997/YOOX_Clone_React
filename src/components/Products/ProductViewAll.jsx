@@ -6,6 +6,8 @@ import "./ProductViewAll.css";
 
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import axios from "axios";
+
 export const ProductViewAll = () => {
   const nav=useNavigate()
   const dispatch = useDispatch();
@@ -14,7 +16,27 @@ export const ProductViewAll = () => {
   // }, []);
     function sortHandler(e) {
    dispatch(sortProduct(e.target.value));
-}
+  }
+  const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
+  function Addtowishlist(prodId) {
+      axios
+        .post(`https://yooxapi.herokuapp.com/wishlistData`, {
+          useId: `${useridData}`,
+          productId: `${prodId}`,
+        })
+        .then(function (response) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+        });
+    }
+  
   const ProductData = useSelector((store) => {
     return store.product.productData;
   });
@@ -47,7 +69,7 @@ export const ProductViewAll = () => {
             <img src={img}></img>
             <div className="view">
               < VisibilityOutlinedIcon className="view-icon" onClick={ ()=>{ nav(`/product/${_id}`)}}/>
-              < FavoriteBorderOutlinedIcon className="love-icon-1" onClick={ ()=>{ dispatch(addWishList(_id))}}/>
+              < FavoriteBorderOutlinedIcon className="love-icon-1" onClick={ ()=>{ Addtowishlist( _id) }}/>
             </div>
             <div className="prt-name">{name}</div>
             <div className="prt-type">{type}</div>
