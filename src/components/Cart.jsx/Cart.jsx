@@ -12,11 +12,7 @@ export default function Cart() {
   const Arrcount = Arrcount1.length;
   useEffect(() => {
     dispatch(getCartData());
-  }, [])
-  // async function getData() {
-  //   let res = await fetch("");
-  //   let data = await res.json();
-  //  }
+  }, []);
 
   return (
     <div>
@@ -80,7 +76,8 @@ export default function Cart() {
         </h2>
       </div>
       <Cart1></Cart1>
-      <hr style={{ border: "2px solid #d2d2ce",marginTop:"5%", backgroundColor: "#d2d2ce" }} />
+      <hr style={{ border: "2px solid #d2d2ce", marginTop: "5%", backgroundColor: "#d2d2ce" }} />
+
       <Cartfooter></Cartfooter>
       <hr style={{ border: "2px solid #d2d2ce", backgroundColor: "#d2d2ce" }} />
       <Box
@@ -120,4 +117,4 @@ export default function Cart() {
       </Box>
     </div>
   );
-}
+};
