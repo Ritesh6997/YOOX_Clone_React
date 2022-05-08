@@ -5,9 +5,16 @@ export const CartDataAction = (value) => {
         payload:value, 
     }
 }
-
-export const getCartData = () => async () => {
-    const res = await fetch("");
+export const cartLength = () => {
+    return {
+        type:"CL"
+    }
+}
+const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
+export const getCartData = ()=> async (dispatch) => {
+    console.log("1234cart");
+    const res = await fetch(`https://yooxapi.herokuapp.com/cartData/${useridData}`);
     const Cartdata = await res.json();
-    // dispatch(Cartdata);
+    console.log(Cartdata.CartData);
+   dispatch(CartDataAction(Cartdata.CartData));
 }

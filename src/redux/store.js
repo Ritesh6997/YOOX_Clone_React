@@ -12,4 +12,13 @@ const rootReducer = combineReducers({
 
 });
 
-export const store = legacy_createStore(rootReducer , applyMiddleware(thunk));
+
+const Middleware1 = (store) => (next) => (action) => {
+  if (typeof (action) === "function") {
+    console.log(action);
+    return action(store.dispatch);
+  }
+  next(action)
+}
+export const store = legacy_createStore(rootReducer, applyMiddleware(Middleware1, thunk));
+console.log(store.getState());

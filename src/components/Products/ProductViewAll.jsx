@@ -26,6 +26,7 @@ export const ProductViewAll = () => {
         })
         .then(function (response) {
           // handle success
+          alert("Add to Dream Box Sucessfully");
           console.log(response);
         })
         .catch(function (error) {

@@ -4,16 +4,19 @@ import { Button,Box} from '@chakra-ui/react';
 import Cart1 from './cart1';
 import Cartfooter from './cartfooter'; 
 import {store} from "../../redux/store"
+import { getCartData } from '../../redux/Cartpage/action';
+import { useDispatch, useSelector } from 'react-redux';
 export default function Cart() {
-
+  const dispatch = useDispatch();
+  const Arrcount1 = useSelector((store => store.cart.Cartdata));
+  const Arrcount = Arrcount1.length;
   useEffect(() => {
-    // getData();
-    
+    dispatch(getCartData());
   }, [])
-  async function getData() {
-    let res = await fetch("");
-    let data = await res.json();
-   }
+  // async function getData() {
+  //   let res = await fetch("");
+  //   let data = await res.json();
+  //  }
 
   return (
     <div>
@@ -73,7 +76,7 @@ export default function Cart() {
             padding: "0 16%",
           }}
         >
-          ITEMS ADDED TO YOUR SHOPPING BAG (2)
+          ITEMS ADDED TO YOUR SHOPPING BAG {Arrcount}
         </h2>
       </div>
       <Cart1></Cart1>

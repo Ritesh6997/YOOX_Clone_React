@@ -1,30 +1,16 @@
 import React, { useEffect } from "react";
 import "./Wishlist.css";
-import { useState } from "react";
-import axios from "axios";
-
+import { getWishlistData } from "../../redux/wishlistpage/action";
+import { useDispatch, useSelector } from "react-redux";
+import {Whislist1} from "./whislist1";
 export const Wishlist = () => {
-  const [data, setData] = useState([]);
-  console.log(data);
-  const delectsdata="something"
-  const deleteProduct = (value) => {
-    console.log(value);
-  axios.delete(`https://yooxapi.herokuapp.com/wishlistData/${value}`)
-    .then(() => getData() );
-    console.log(1);
-  };
-const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
+  const WishlistData = useSelector((store) => store.wishlist.wishlistData);
+  console.log(WishlistData,"whsh");
+  const dispatch = useDispatch();
   useEffect(() => {
-    getData();
+    console.log(1)
+    dispatch(getWishlistData());
   }, []);
-  function getData(){
-    axios
-      .get(`https://yooxapi.herokuapp.com/wishlistData/${useridData}`)
-      .then((res) => {
-        console.log(res.data.wishlistData);
-        setData([...res.data.wishlistData]);
-      });
-  }
   return (
     <div>
       <div className="drmbox">
@@ -47,25 +33,7 @@ const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
             <div>FAVOURITE ITEM</div>
             <div>MANAGE NOTIFICATION</div>
           </div>
-          <div className="second">
-            {data.map((item) => (
-              <div key={item.productId.id} className="mapp">
-                <img className="imgwish" src={item.productId.img[0]} alt="" />
-                <h5>{item.productId.name}</h5>
-                <p>{item.productId.finalPrice}</p>
-                <h5>{item.productId.size[0]}</h5>
-                <p>{item.productId.category[0]}</p>
-                <button>ADD TO SHOPPING BAG</button>
-                <button
-                  onClick={() => {
-                    deleteProduct(item._id);
-                  }}
-                >
-                  REMOVE ITEM
-                </button>
-              </div>
-            ))}
-          </div>
+          <Whislist1></Whislist1>
         </div>
       </div>
     </div>
