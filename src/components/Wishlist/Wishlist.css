@@ -1,0 +1,84 @@
+.drmbox{
+    height: 126px;
+    width: 100%;
+    border: 1px solid transparent;
+    text-align: center;
+    color: #333333;
+}
+.drmbox p{
+    font-size: 12px;
+}
+
+.scnd_name{
+    /* height: auto; */
+    min-height: 700px;
+    max-height: fit-content;
+    width: 100%;
+    border: 1px solid transparent;
+    background-color: #F3F3F3;
+}
+.firstBox{
+    width: 1118px;
+    height: 190px;
+    border: 1px solid transparent;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    color: #333333;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}
+
+.secondBox{
+    width: 1118px;
+    min-height: 300px;
+    max-height: fit-content;
+    border: 1px solid transparent;
+    margin: auto;
+    margin-top: 60px;
+    background-color: #FFFFFF;
+}
+
+.first{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+    width: 1020px;
+    margin: auto;
+    border-bottom: 1px solid #DDDDDD;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.second{
+    width: 1020px;
+    margin: auto;
+    border: 1px solid transparent;
+    max-height: max-content;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: space-around;
+    
+}
+.mapp{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #333333;
+}
+
+.mapp button{
+    height: 40px;
+    width: 227px;
+    background-color: #F3F3F3;
+    color: #B5B5B5;
+    border: none;
+    margin-top: 3px;
+}
+img{
+    height: 289px;
+    width: 227px;
+}

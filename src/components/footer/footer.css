@@ -1,0 +1,21 @@
+.flexdiv{
+    display: flex;
+}
+.flexdirC{
+flex-direction: column;
+}
+.listdata{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+.formF{
+    width: 280px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 30px 30px;
+}
