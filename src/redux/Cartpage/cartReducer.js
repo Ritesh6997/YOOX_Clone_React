@@ -6,7 +6,7 @@ export const cartReducer = (state=initalState,{type,payload}) => {
             return {
                 
                 ...state, Cartdata
-                    : [...state.Cartdata,...payload]
+                    : [...payload]
              
             };
         default:

@@ -19,7 +19,8 @@ const ProductsDetails = () => {
         productId: proData._id,
         useId: useridData,
       }),
-    });
+        
+    }).then(()=>alert("Add to Shopping Box Sucessfully"));
     
   };
 
@@ -31,6 +32,7 @@ const ProductsDetails = () => {
       })
       .then(function (response) {
         // handle success
+        alert("Add to Dream Box Sucessfully");
         console.log(response);
       })
       .catch(function (error) {

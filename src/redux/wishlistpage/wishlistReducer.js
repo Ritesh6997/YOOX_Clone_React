@@ -1,16 +1,16 @@
 import {WishlistData} from "./action"
-const initalState=[]
-export const wishlistReducer = (state=initalState,{type,payload}) => {
+const initalState = { wishlistData: [] }
+export const wishlistReducer = (store=initalState,{type,payload}) => {
     switch (type) {
         case WishlistData:
             return {
                 
-                ...state, wishlistData
-                    : [...state.wishlistData,...payload]
+                ...store, wishlistData
+                    : [...payload]
              
             };
         default:
-            return state;
+            return store;
     }
 
 }

@@ -1,13 +1,15 @@
 export const WishlistData = "WishlistData";
-export const WishlistDataAction = (wishlistData) => {
+export const WishlistDataAction = (value) => {
    return {
         type: WishlistData,
-        payload:wishlistData, 
+        payload:value, 
     }
 }
-
-export const getWishlistData = () => async () => {
-    const res = await fetch("");
-    const wishlistData = await res.json();
-    // dispatch(wishlistData);
+const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
+export const getWishlistData = () => async (dispatch) => {
+    console.log("1234wishlist");
+    const res = await fetch(`https://yooxapi.herokuapp.com/wishlistData/${useridData}`);
+    const wishlistData1 = await res.json();
+    console.log(wishlistData1.wishlistData);
+    dispatch(WishlistDataAction(wishlistData1.wishlistData));
 }

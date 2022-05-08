@@ -8,12 +8,38 @@ import {
   AiFillPlusCircle,
   AiFillMinusCircle,
 } from "react-icons/ai";
-export default function Counter({ value1 }) {
-  console.log(value1)
+import { useDispatch } from 'react-redux';
+import { getCartData } from '../../redux/Cartpage/action';
+import axios from 'axios';
+export default function Counter({ value1, value2 }) {
+  const [countervalue, setCounterValue] = useState(value1);
   const isAuth = true;
-
-  const [countervalue, setCounterValue] = useState(0);
-  console.log(countervalue)
+  const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
+  const dispatch = useDispatch();
+  console.log(value1,value2);
+  let isAuthp;
+  if (value1 >= 2 || countervalue>=2) {
+    isAuthp = true;
+  } else {
+    isAuthp = false;
+  }
+  console.log(countervalue);
+  function Addtowishlist() {
+    axios
+      .post(`https://yooxapi.herokuapp.com/wishlistData`, {
+        useId: `${useridData}`,
+        productId: `${value2}`,
+      })
+      .then(function (response) {
+        // handle success
+        alert("Add to Dream Box Sucessfully");
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  }
   const handlechange = (value) => {
     if (countervalue <= 0 && value === -1) {
       return;
@@ -21,24 +47,27 @@ export default function Counter({ value1 }) {
     setCounterValue((previous) => previous + value);
   }
   const handleDelect = () => {
-    fetch("", {
-      method: "DELETE"
-    }).then()
+    fetch(`https://yooxapi.herokuapp.com/cartData/${value2}`, {
+      method: "DELETE",
+    }).then(()=>dispatch(getCartData()));
 
   }
 
   const upadatedata = async () => {
-  const rawResponse = await fetch("", {
-    method: 'PATCH',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ count: 1 })
-  }).then(()=>("call the function to update the data on ui"))
+  const rawResponse = await fetch(
+    `https://yooxapi.herokuapp.com/cartData/${value2}`,
+    {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ count: countervalue }),
+    }
+  ).then(() => console.log("call the function to update the data on ui"));
   }
   return (
-    <div className='counterdiv'>
+    <div className="counterdiv">
       <Box
         w={"80px"}
         h={"23px"}
@@ -47,7 +76,7 @@ export default function Counter({ value1 }) {
         borderRadius={"23px"}
         justifyContent={isAuth ? "space-between" : "center"}
       >
-        {isAuth ? (
+        {isAuthp ? (
           <button
             className="cartbtn"
             onClick={() => {
@@ -57,7 +86,7 @@ export default function Counter({ value1 }) {
             {AiFillMinusCircle()}
           </button>
         ) : (
-          ""
+          <span style={{ width: "10px" }}> </span>
         )}
         <span>{countervalue}</span>
         {isAuth ? (
@@ -80,10 +109,18 @@ export default function Counter({ value1 }) {
           columnGap: "6px",
           fontSize: "12px",
         }}
+        onClick={() => {
+          handleDelect();
+        }}
       >
         {ImCross()}REMOVE
       </button>
       <button
+        onClick={() => {
+          Addtowishlist();
+          handleDelect();
+
+        }}
         style={{
           display: "flex",
           alignItems: "center",
