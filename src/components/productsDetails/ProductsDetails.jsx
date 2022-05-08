@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./ProductsDetails.css";
 import infoPNG from "../../img/info.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { cartLength } from "../../redux/Cartpage/action";
 const ProductsDetails = () => {
   const [idImg, setImg] = useState(0);
   const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
-  
+  const dispatch = useDispatch();
     function Addtocart() {
     fetch("https://yooxapi.herokuapp.com/cartData", {
       method: "POST",
@@ -127,6 +128,7 @@ console.log(proData);
         <div className="addto-bag-btn">
           <button onClick={() => {
             Addtocart();
+            dispatch(cartLength());
           }} >ADD TO SHOPPING BAG</button>
           <button onClick={() => {
             Addtowishlist();

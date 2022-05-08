@@ -22,8 +22,8 @@ export default function Cart1() {
               <span>LIMITED AVAILABILITY</span>
             </div>
           </div>
-          <div >{el.productId.colorName}</div>
-          <Counter value1={el.count} value2={el._id}></Counter>
+          <div>{el.productId.colorName}</div>
+          <Counter value1={el.count} value2={el.productId._id}value3={el._id}></Counter>
           <div style={{ display: "flex", columnGap: "10px" }}>
             <div className="flexdivC">
               <span style={{ textDecoration: "line-through" }}>

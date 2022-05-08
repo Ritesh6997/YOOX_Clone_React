@@ -11,12 +11,12 @@ import {
 import { useDispatch } from 'react-redux';
 import { getCartData } from '../../redux/Cartpage/action';
 import axios from 'axios';
-export default function Counter({ value1, value2 }) {
+export default function Counter({ value1, value2,value3 }) {
+  console.log(value2,"value2");
   const [countervalue, setCounterValue] = useState(value1);
   const isAuth = true;
   const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
   const dispatch = useDispatch();
-  console.log(value1,value2);
   let isAuthp;
   if (value1 >= 2 || countervalue>=2) {
     isAuthp = true;
@@ -25,10 +25,11 @@ export default function Counter({ value1, value2 }) {
   }
   console.log(countervalue);
   function Addtowishlist() {
+    console.log(value2,"lfjdsh")
     axios
       .post(`https://yooxapi.herokuapp.com/wishlistData`, {
         useId: `${useridData}`,
-        productId: `${value2}`,
+        productId: `${""+value2}`,
       })
       .then(function (response) {
         // handle success
@@ -47,7 +48,7 @@ export default function Counter({ value1, value2 }) {
     setCounterValue((previous) => previous + value);
   }
   const handleDelect = () => {
-    fetch(`https://yooxapi.herokuapp.com/cartData/${value2}`, {
+    fetch(`https://yooxapi.herokuapp.com/cartData/${value3}`, {
       method: "DELETE",
     }).then(()=>dispatch(getCartData()));
 

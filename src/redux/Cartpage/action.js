@@ -5,6 +5,11 @@ export const CartDataAction = (value) => {
         payload:value, 
     }
 }
+export const cartLength = () => {
+    return {
+        type:"CL"
+    }
+}
 const useridData = JSON.parse(localStorage.getItem("userIdyoox"));
 export const getCartData = ()=> async (dispatch) => {
     console.log("1234cart");

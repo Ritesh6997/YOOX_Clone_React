@@ -9,6 +9,10 @@ export const cartReducer = (state=initalState,{type,payload}) => {
                     : [...payload]
              
             };
+        case "CL":
+            return {
+                ...state,Cartdata:[...state.Cartdata]
+            }
         default:
             return state;
     }
