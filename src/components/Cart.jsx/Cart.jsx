@@ -38,7 +38,7 @@ export default function Cart() {
           <Link to="/">BACK TO SHOPPING</Link>
         </Box>
         <Box>
-          <Link to="/">
+          <Link to="/checkout">
             <Button bg={"#febf08"} padding="25px">
               {" "}
               <img style={{width:"60px"}}
@@ -49,7 +49,7 @@ export default function Cart() {
             </Button>
           </Link>{" "}
           or
-          <Link to="/">
+          <Link to="/checkout">
             {" "}
             <Button
               bg={"black"}
@@ -91,7 +91,7 @@ export default function Cart() {
           <Link to="/">BACK TO SHOPPING</Link>
         </Box>
         <Box>
-          <Link to="/">
+          <Link to="/checkout">
             <Button bg={"#febf08"} padding="25px">
               {" "}
               <img style={{width:"60px"}}
@@ -102,7 +102,7 @@ export default function Cart() {
             </Button>
           </Link>{" "}
           or
-          <Link to="/">
+          <Link to="/checkout">
             {" "}
             <Button
               bg={"black"}
