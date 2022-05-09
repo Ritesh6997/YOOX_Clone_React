@@ -4,11 +4,13 @@ import { productReducer } from "./product/reducer";
 import { isAuthreducer } from "./isAuth/isAuthReducer";
 import { cartReducer } from "./Cartpage/cartReducer";
 import {wishlistReducer } from "./wishlistpage/wishlistReducer";
+import { ShippingReducer } from "./checkout/reducer";
 const rootReducer = combineReducers({
   product: productReducer,
   isAuth: isAuthreducer,
   cart: cartReducer,
   wishlist:wishlistReducer,
+  shippingAddress : ShippingReducer
 
 });
 

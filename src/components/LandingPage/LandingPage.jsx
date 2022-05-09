@@ -2,7 +2,7 @@ import './LandingPage.css'
 import { Link } from 'react-router-dom'
 export const LandingPage=()=>{
     return (
-      <div className="container">
+      <div className="container" style={{flexDirection:"column"}}>
         <div className="LandingPage_title">
           <img
             className="LandingPage_titleimg"

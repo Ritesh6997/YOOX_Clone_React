@@ -13,6 +13,8 @@ import { LandingPage } from "./components/LandingPage/LandingPage";
 import { Login } from "./components/Login/Login";
 import { Signup } from "./components/Signup/Signup";
 import { Wishlist } from "./components/Wishlist/Wishlist";
+import { Checkout } from "./components/checkout/CheckOut";
+import { PaymentPage } from "./components/Payment/Payment";
 function App() {
   return (
     <div style={{backgroundColor: "whitesmoke",}}>
@@ -44,6 +46,9 @@ function App() {
         ></Route>
         {/* checkout page -Route*/}
         {/* <Route path="/checkOut" element={<CheckOut />}></Route> */}
+
+        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/payment" element={<PaymentPage />}></Route>
       </Routes>
       {/* footer */}
       <Footer></Footer>
