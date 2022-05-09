@@ -6,17 +6,14 @@ import { Promocode } from './promocode';
 export default function Cartfooter() {
   const CartData = useSelector((store) => store.cart.Cartdata);
   const dispatch = useDispatch();
-  const [cartsum, setcartsum ] = useState(0);
-  const sum=()=> {
-    let Totalprice=CartData.reduce((total, ele) => {
-      return total + +(ele.productId.finalPrice);
-    }, 0)
-    setcartsum(Totalprice);
-  }
+  let Totalprice = CartData.reduce((total, ele) => {
+    return total + +ele.productId.finalPrice;
+  }, 0);
+  console.log(Totalprice,"totalprice");
+  const [cartsum, setcartsum] = useState(Totalprice);
   useEffect(() => {
-    sum();
-    dispatch(Cartsum(cartsum));
-  })
+    setcartsum(Totalprice);
+  },[Totalprice])
     const handlecode=(code) => {
     if (code === "MASAI30") {
       console.log("yes")
@@ -43,7 +40,7 @@ export default function Cartfooter() {
       </div>
       <div className="disflexdiv">
         <span>TOTAL FOR ITEMS</span>
-        <span>$ { cartsum}</span>
+        <span>$ {cartsum}</span>
       </div>
 
       <div className="disflexdiv">
