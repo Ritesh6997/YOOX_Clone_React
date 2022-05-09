@@ -63,7 +63,7 @@ export const Signup = () => {
   `;
 
   return (
-    <div style={{ height: "1200px" }}>
+    <div style={{ height: "1300px" }}>
       <hr></hr>
       <div className="myox">
         <h3>MYO0X</h3>
