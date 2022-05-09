@@ -6,11 +6,13 @@ import GoogleLogin from "react-google-login";
 import { useDispatch } from "react-redux";
 import { store } from "../../redux/store";
 import { isAuthAction } from "../../redux/isAuth/action";
+import { useNavigate } from "react-router-dom";
 export const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const responseSuccessGoogle = (response) => {
     console.log(response);
@@ -46,9 +48,11 @@ export const Login = () => {
       .then((res) => {
         console.log(res.data.user._id);
         alert(res.data.message);
+        localStorage.setItem("userEmailyoox", JSON.stringify(res.data.user.email));
         localStorage.setItem("userIdyoox", JSON.stringify(res.data.user._id));
         let userid = localStorage.getItem("userIdyoox");
         dispatch(isAuthAction(userid));
+        navigate("/");
       });
     
   };
